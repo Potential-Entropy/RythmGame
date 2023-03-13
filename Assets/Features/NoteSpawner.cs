@@ -9,8 +9,7 @@ public class NoteSpawner : MonoBehaviour
 
     void spawnNote(int lane)
     {
-        // create Note
         // fmod: play sound with delay
-        // lanes[lane].AddNote(note);
+        lanes[lane].AddNote(new Note(Time.time + noteDelay));
     }
 }

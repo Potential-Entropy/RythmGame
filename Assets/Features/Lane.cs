@@ -14,11 +14,14 @@ public class Lane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        while (Time.time < notes.Peek().timing)
+            notes.Dequeue;
     }
 
     public void AddNote(Note note)
     {
-        
+        notes.Enqueue(note);
     }
+
+
 }

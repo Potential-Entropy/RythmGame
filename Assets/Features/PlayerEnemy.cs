@@ -23,7 +23,7 @@ public class PlayerEnemy : MonoBehaviour
         combo = 0;
     }
 
-    void EvaluateHit(NoteHit hit)
+    public void EvaluateHit(NoteHit hit)
     {
         switch (hit)
         {
