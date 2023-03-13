@@ -1,0 +1,51 @@
+{
+    "name": "MainControls",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "6960fa8b-a152-49ff-86fd-a73fb8af259a",
+            "actions": [
+                {
+                    "name": "Debug",
+                    "type": "Button",
+                    "id": "f2a7f033-aece-4d18-86ab-825a42fd6521",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "556a0f3e-d88f-49c4-8ae6-24713efe4e70",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Debug",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "kbm",
+            "bindingGroup": "kbm",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
