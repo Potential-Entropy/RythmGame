@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour
 {
-    [SerializeField] int laneCount;
+    [SerializeField] private int laneCount;
+    [SerializeField] private GameObject note;
     private Lane[] lanes;
     public static float noteDelay = 0.5f;
 
@@ -17,6 +18,6 @@ public class NoteSpawner : MonoBehaviour
     void SpawnNote(int lane)
     {
         // TODO fmod: play sound with delay
-        lanes[lane].AddNote(new Note(noteDelay));
+        lanes[lane].AddNote(Instantiate(note).GetComponent<Note>());
     }
 }

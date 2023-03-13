@@ -9,6 +9,7 @@ public class Lane : MonoBehaviour
 
     [SerializeField] private const float perfectRange = 0.05f;
     [SerializeField] private const float goodRange = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {

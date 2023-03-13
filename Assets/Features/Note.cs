@@ -12,11 +12,15 @@ public class Note : MonoBehaviour
     void Awake()
     {
         timeLeft = noteDelay;
+        GetComponent<RectTransform>().anchoredPosition =
+            new Vector2(GetComponent<RectTransform>().anchoredPosition.x, spawnPosition);
     }
 
     // Update is called once per frame
     void Update()
     {
         timeLeft -= Time.deltaTime;
+        GetComponent<RectTransform>().anchoredPosition = 
+            new Vector2(GetComponent<RectTransform>().anchoredPosition.x, Mathf.Lerp(hitPosition, spawnPosition, timeLeft / noteDelay));
     }
 }
