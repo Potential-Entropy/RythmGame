@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public const float timing;
+    public static float noteDelay = 0.5f;
+    public float timeLeft;
+    private static int spawnPosition = 0;
+    private static int hitPosition = 1000;
 
-    public Note(float t)
+    void Awake()
     {
-        timing = t;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
+        timeLeft = noteDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        timeLeft -= Time.deltaTime;
     }
 }

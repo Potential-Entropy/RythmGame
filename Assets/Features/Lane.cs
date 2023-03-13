@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
+    public static PlayerEnemy player;
     private Queue<Note> notes;
+
+    [SerializeField] private const float perfectRange = 0.05f;
+    [SerializeField] private const float goodRange = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +18,11 @@ public class Lane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (Time.time < notes.Peek().timing)
-            notes.Dequeue;
+        while (notes.Peek().timeLeft < - goodRange)
+        {
+            notes.Dequeue();
+            player.EvaluateHit(NoteHit.Miss);
+        }
     }
 
     public void AddNote(Note note)
@@ -23,5 +30,8 @@ public class Lane : MonoBehaviour
         notes.Enqueue(note);
     }
 
+    public void Hit()
+    {
 
+    }
 }

@@ -9,12 +9,12 @@ public enum NoteHit
 
 public class PlayerEnemy : MonoBehaviour
 {
-    public const float playerMaxHP = 100;
-    public const float enemyMaxHP = 500;
+    [SerializeField] public const float playerMaxHP = 100;
+    [SerializeField] public const float enemyMaxHP = 500;
     private float playerHP;
     private float enemyHP;
     private int combo;
-    public const float baseDamage = 10;
+    [SerializeField] private const float baseDamage = 10;
 
     void Start()
     {
