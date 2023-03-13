@@ -8,7 +8,11 @@ using UnityEngine.InputSystem;
 
 public enum Buttons
 {
-    Test
+    Test,
+    One,
+    Two,
+    Three,
+    Four
 }
 
 public class InputSystem : MonoBehaviour
@@ -26,7 +30,12 @@ public class InputSystem : MonoBehaviour
 
         inputMap = new Dictionary<Buttons, InputAction>
         {
-            { Buttons.Test, inputActions.Default.Debug}
+            { Buttons.Test, inputActions.Default.Debug},
+            { Buttons.One, inputActions.Default.S },
+            { Buttons.Two, inputActions.Default.D },
+            { Buttons.Three, inputActions.Default.J },
+            { Buttons.Four, inputActions.Default.K },
+
         };
 
         foreach (var btn in inputMap.Keys)
