@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dc6decd0-c980-4aeb-b764-a961d7ae90ab}">
+		<property name="assetPath">
+			<value>bruh.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.88800000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0565b871-f53e-4509-afaa-2097a3d1be14}</destination>
+		</relationship>
+	</object>
+</objects>
