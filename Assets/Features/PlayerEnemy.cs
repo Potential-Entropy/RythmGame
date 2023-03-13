@@ -9,12 +9,12 @@ public enum NoteHit
 
 public class PlayerEnemy : MonoBehaviour
 {
-    const float playerMaxHP = 100;
-    const float enemyMaxHP = 500;
-    float playerHP;
-    float enemyHP;
-    int combo;
-    const float baseDamage = 10;
+    public const float playerMaxHP = 100;
+    public const float enemyMaxHP = 500;
+    private float playerHP;
+    private float enemyHP;
+    private int combo;
+    public const float baseDamage = 10;
 
     void Start()
     {
