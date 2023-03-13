@@ -5,11 +5,12 @@ using UnityEngine;
 public class NoteSpawner : MonoBehaviour
 {
     public Lane[] lanes;
-    public static const float noteDelay = 0.5f;
+    public static float noteDelay = 0.5f;
 
     void spawnNote(int lane)
     {
-
-        lanes[lane].AddNote(note);
+        // create Note
+        // fmod: play sound with delay
+        // lanes[lane].AddNote(note);
     }
 }

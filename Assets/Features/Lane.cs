@@ -8,7 +8,7 @@ public class Lane : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        notes = new Queue<Note>(50);
+        notes = new Queue<Note>(20);
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class Lane : MonoBehaviour
         
     }
 
-    void AddNote(Note note)
+    public void AddNote(Note note)
     {
         
     }
