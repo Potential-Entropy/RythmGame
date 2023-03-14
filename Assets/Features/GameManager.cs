@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        NoteSpawnPosition = NoteSpawn.transform.position.y;
-        NoteHitPosition = NoteHit.transform.position.y;
+        NoteSpawnPosition = NoteSpawn.GetComponent<RectTransform>().position.y;
+        NoteHitPosition = NoteHit.GetComponent<RectTransform>().position.y;
     }
 
     public PlayerEnemy playerManager;

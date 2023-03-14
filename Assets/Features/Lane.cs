@@ -31,24 +31,28 @@ public class Lane : MonoBehaviour
 
     public void Hit()
     {
-        float timeLeft = notes.Peek().timeLeft;
-        if (timeLeft < GoodRange)
+        if (notes.Count != 0)
         {
-            if (timeLeft > PerfectRange)
-                Player.EvaluateHit(NoteHit.Good);
-            else if (timeLeft >= -PerfectRange)
-                Player.EvaluateHit(NoteHit.Perfect);
-            else if (timeLeft >= -GoodRange)
-                Player.EvaluateHit(NoteHit.Good);
-            else
-                Player.EvaluateHit(NoteHit.Miss);
+            float timeLeft = notes.Peek().timeLeft;
+            if (timeLeft < goodRange)
+            {
+                if (timeLeft > perfectRange)
+                    Player.EvaluateHit(NoteHit.Good);
+                else if (timeLeft >= -perfectRange)
+                    Player.EvaluateHit(NoteHit.Perfect);
+                else if (timeLeft >= -goodRange)
+                    Player.EvaluateHit(NoteHit.Good);
+                else
+                    Player.EvaluateHit(NoteHit.Miss);
 
-            DiscardFirstNote();
+                DiscardFirstNote();
+            }
         }
     }
 
     private void DiscardFirstNote()
     {
-        Destroy(notes.Dequeue().gameObject);
+        if (notes.Count != 0)
+            Destroy(notes.Dequeue().gameObject);
     }
 }
