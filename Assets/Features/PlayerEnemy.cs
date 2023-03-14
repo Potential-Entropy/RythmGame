@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum NoteHit
 {
@@ -21,13 +22,19 @@ public class PlayerEnemy : MonoBehaviour
     [SerializeField] private TextMeshProUGUI comboDisplay;
     [SerializeField] private TextMeshProUGUI hitDisplay;
 
-    [SerializeField] private TextMeshProUGUI playerHealthBar;
-    [SerializeField] private TextMeshProUGUI enemyHealthBar;
+    [SerializeField] private TextMeshProUGUI playerHealthValue;
+    [SerializeField] private Slider playerHealthBar;
+    [SerializeField] private TextMeshProUGUI enemyHealthValue;
+    [SerializeField] private Slider enemyHealthBar;
 
     void Start()
     {
         playerHP = playerMaxHP;
+        playerHealthBar.maxValue = playerMaxHP;
+        playerHealthBar.value = playerMaxHP;
         enemyHP = enemyMaxHP;
+        enemyHealthBar.maxValue = enemyMaxHP;
+        enemyHealthBar.value = enemyMaxHP;
         combo = 0;
     }
 
@@ -56,15 +63,17 @@ public class PlayerEnemy : MonoBehaviour
     void DamagePlayer()
     {
         playerHP -= baseDamage;
-        playerHealthBar.text = playerHP.ToString();
-        if(playerHP <= 0)
+        playerHealthValue.text = playerHP.ToString();
+        playerHealthBar.value = playerHP;
+        if (playerHP <= 0)
             Lose();
     }
 
     void DamageEnemy()
     {
         enemyHP -= baseDamage * (1 + combo * 0.01f);
-        enemyHealthBar.text = enemyHP.ToString();
+        enemyHealthValue.text = enemyHP.ToString();
+        enemyHealthBar.value = enemyHP;
         if (enemyHP <= 0)
             Win();
     }
