@@ -11,6 +11,7 @@ public class Note : MonoBehaviour
     private static float spawnPosition { get { return GameManager.Instance.NoteSpawnPosition; } }
     private static float hitPosition { get { return GameManager.Instance.NoteHitPosition; } }
 
+
     void Awake()
     {
         timeLeft = NoteDelay;
@@ -20,7 +21,7 @@ public class Note : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        GetComponent<RectTransform>().position = 
-            new Vector2(GetComponent<RectTransform>().position.x, GetComponent<RectTransform>().position.y - (spawnPosition - hitPosition) * Time.deltaTime / NoteDelay);
+        RectTransform rt = GetComponent<RectTransform>();
+        rt.position = new Vector2(rt.position.x, hitPosition + (spawnPosition - hitPosition) * timeLeft / NoteDelay);
     }
 }

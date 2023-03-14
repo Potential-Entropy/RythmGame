@@ -30,4 +30,6 @@ public class GameManager : MonoBehaviour
 
     public float pefectRange = 0.05f;
     public float goodRange = 0.1f;
+
+    public GameObject LanePanel;
 }

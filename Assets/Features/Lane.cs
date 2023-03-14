@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lane : MonoBehaviour
 {
     public static PlayerEnemy Player { get { return GameManager.Instance.playerManager; } }
+    private static GameObject Panel { get { return GameManager.Instance.LanePanel; } }
     private Queue<Note> notes = new Queue<Note>(20);
 
     [SerializeField] private static float PerfectRange { get { return GameManager.Instance.pefectRange; } }
@@ -22,11 +23,8 @@ public class Lane : MonoBehaviour
 
     public void AddNote(GameObject notePrefab)
     {
-        Note note = Instantiate(notePrefab, new Vector2(0, GameManager.Instance.NoteSpawnPosition), Quaternion.identity, transform).GetComponent<Note>();
+        Note note = Instantiate(notePrefab, new Vector2(50, GameManager.Instance.NoteSpawnPosition), Quaternion.identity, Panel.transform).GetComponent<Note>();
         notes.Enqueue(note);
-
-        // for testing
-        //note.transform.position = new Vector2(spawnX, spawnY);
     }
 
     public void Hit()
