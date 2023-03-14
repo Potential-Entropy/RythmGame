@@ -895,8 +895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 83.31619, y: -71}
-  m_SizeDelta: {x: 89.1156, y: 50}
+  m_AnchoredPosition: {x: 117.96942, y: -71}
+  m_SizeDelta: {x: 158.4221, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &955139466
 MonoBehaviour:
@@ -1490,11 +1490,11 @@ MonoBehaviour:
   - {fileID: 222295725}
   noteSounds:
   - Guid:
-      Data1: 1959157939
-      Data2: 1074683639
-      Data3: -1729650023
-      Data4: 847068403
-    Path: event:/TestSound
+      Data1: 710047835
+      Data2: 1228858609
+      Data3: -913597022
+      Data4: -328401723
+    Path: event:/Music
   bpm: 130
   noteInfos:
   - {x: 5, y: 0, z: 0}
@@ -1746,8 +1746,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 730, y: -71}
-  m_SizeDelta: {x: 89.1156, y: 50}
+  m_AnchoredPosition: {x: 760.41003, y: -71}
+  m_SizeDelta: {x: 149.9355, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003992817
 MonoBehaviour:
