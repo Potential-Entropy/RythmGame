@@ -13,7 +13,7 @@ public class Lane : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        notes = new Queue<Note>(20);
+        notes = new Queue<Note>(20); // <- Wie viele Noten können höchstens gleichzeitig pro Lane existieren
     }
 
     // Update is called once per frame
