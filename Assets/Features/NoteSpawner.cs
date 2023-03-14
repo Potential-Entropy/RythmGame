@@ -23,8 +23,6 @@ public class NoteSpawner : MonoBehaviour
             // for testing
             Debug.Log("Spawning Note");
 
-            //GameObject newNote = Instantiate(note);
-            //Debug.Log("pos note: " + newNote);
 
             lanes[lane].AddNote(note);
             StartCoroutine(PlayNote(FMODUnity.RuntimeManager.CreateInstance(noteSounds[sound])));

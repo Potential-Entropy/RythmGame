@@ -7,14 +7,12 @@ public class Note : MonoBehaviour
 {
     public static float noteDelay = 0.5f;
     public float timeLeft;
-    public static float spawnPosition = 2;
-    private static float hitPosition = 0;
+    public static float spawnPosition = 0;
+    private static float hitPosition = 100;
 
     void Awake()
     {
         timeLeft = noteDelay;
-        //GetComponent<RectTransform>().anchoredPosition =
-          //  new Vector2(GetComponent<RectTransform>().anchoredPosition.x, spawnPosition);
     }
 
     // Update is called once per frame

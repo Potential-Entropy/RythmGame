@@ -9,21 +9,13 @@ public class Lane : MonoBehaviour
 
     [SerializeField] private const float perfectRange = 0.05f;
     [SerializeField] private const float goodRange = 0.1f;
-    //[SerializeField] private float spawnX = 0;
-    //[SerializeField] private static float spawnY = 2.35f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-         // <- Wie viele Noten können höchstens gleichzeitig pro Lane existieren
-    }
 
     // Update is called once per frame
     void Update()
     {
         while (notes.Count != 0 && notes.Peek().timeLeft < -goodRange)
         {
-            notes.Dequeue();
+            DiscardFirstNote();
             Player.EvaluateHit(NoteHit.Miss);
         }
     }
@@ -51,6 +43,11 @@ public class Lane : MonoBehaviour
             else
                 Player.EvaluateHit(NoteHit.Miss);
         }
-        notes.Dequeue();
+        DiscardFirstNote();
+    }
+
+    private void DiscardFirstNote()
+    {
+        Destroy(notes.Dequeue());
     }
 }
