@@ -27,4 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject NoteHit;
     public float NoteSpawnPosition;
     public float NoteHitPosition;
+
+    public float pefectRange = 0.05f;
+    public float goodRange = 0.1f;
 }

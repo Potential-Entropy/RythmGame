@@ -7,13 +7,13 @@ public class Lane : MonoBehaviour
     public static PlayerEnemy Player { get { return GameManager.Instance.playerManager; } }
     private Queue<Note> notes = new Queue<Note>(20);
 
-    [SerializeField] private const float perfectRange = 0.05f;
-    [SerializeField] private const float goodRange = 0.1f;
+    [SerializeField] private static float PerfectRange { get { return GameManager.Instance.pefectRange; } }
+    [SerializeField] private static float GoodRange { get { return GameManager.Instance.goodRange; } }
 
     // Update is called once per frame
     void Update()
     {
-        while (notes.Count != 0 && notes.Peek().timeLeft < -goodRange)
+        while (notes.Count != 0 && notes.Peek().timeLeft < -GoodRange)
         {
             DiscardFirstNote();
             Player.EvaluateHit(NoteHit.Miss);
@@ -32,13 +32,13 @@ public class Lane : MonoBehaviour
     public void Hit()
     {
         float timeLeft = notes.Peek().timeLeft;
-        if (timeLeft < goodRange)
+        if (timeLeft < GoodRange)
         {
-            if (timeLeft > perfectRange)
+            if (timeLeft > PerfectRange)
                 Player.EvaluateHit(NoteHit.Good);
-            else if (timeLeft >= -perfectRange)
+            else if (timeLeft >= -PerfectRange)
                 Player.EvaluateHit(NoteHit.Perfect);
-            else if (timeLeft >= -goodRange)
+            else if (timeLeft >= -GoodRange)
                 Player.EvaluateHit(NoteHit.Good);
             else
                 Player.EvaluateHit(NoteHit.Miss);
