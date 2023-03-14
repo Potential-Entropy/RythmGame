@@ -25,6 +25,7 @@ public class PlayerEnemy : MonoBehaviour
 
     public void EvaluateHit(NoteHit hit)
     {
+        Debug.Log(hit.ToString());
         switch (hit)
         {
             case NoteHit.Perfect: 

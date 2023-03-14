@@ -23,5 +23,6 @@ public class LaneButton : MonoBehaviour, IPointerClickHandler
     private void Trigger()
     {
         Debug.Log(button.ToString());
+        GetComponent<Lane>().Hit();
     }
 }
