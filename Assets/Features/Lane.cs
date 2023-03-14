@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lane : MonoBehaviour
 {
     public static PlayerEnemy Player { get { return GameManager.Instance.playerManager; } }
-    private Queue<Note> notes;
+    private Queue<Note> notes = new Queue<Note>(20);
 
     [SerializeField] private const float perfectRange = 0.05f;
     [SerializeField] private const float goodRange = 0.1f;
@@ -15,7 +15,7 @@ public class Lane : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        notes = new Queue<Note>(20); // <- Wie viele Noten können höchstens gleichzeitig pro Lane existieren
+         // <- Wie viele Noten können höchstens gleichzeitig pro Lane existieren
     }
 
     // Update is called once per frame
