@@ -24,6 +24,14 @@ public class NoteSpawner : MonoBehaviour
 
     public static float NoteDelay = 1f;
 
+    private void Awake()
+    {
+        float laneWidth = 1.0f * Screen.width / lanes.Length;
+        for(int i = 0; i < lanes.Length; i++)
+        {
+            lanes[i].xPosition = (i + 0.5f) * laneWidth;
+        }
+    }
     // for testing only
     private void Start()
     {

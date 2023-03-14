@@ -7,9 +7,10 @@ public class Lane : MonoBehaviour
     public static PlayerEnemy Player { get { return GameManager.Instance.playerManager; } }
     private static GameObject Panel { get { return GameManager.Instance.LanePanel; } }
     private Queue<Note> notes = new Queue<Note>(20);
+    public float xPosition;
 
-    [SerializeField] private static float PerfectRange { get { return GameManager.Instance.pefectRange; } }
-    [SerializeField] private static float GoodRange { get { return GameManager.Instance.goodRange; } }
+    private static float PerfectRange { get { return GameManager.Instance.pefectRange; } }
+    private static float GoodRange { get { return GameManager.Instance.goodRange; } }
 
     // Update is called once per frame
     void Update()
@@ -23,7 +24,7 @@ public class Lane : MonoBehaviour
 
     public void AddNote(GameObject notePrefab)
     {
-        Note note = Instantiate(notePrefab, new Vector2(50, GameManager.Instance.NoteSpawnPosition), Quaternion.identity, Panel.transform).GetComponent<Note>();
+        Note note = Instantiate(notePrefab, new Vector2(xPosition, GameManager.Instance.NoteSpawnPosition), Quaternion.identity, Panel.transform).GetComponent<Note>();
         notes.Enqueue(note);
     }
 
