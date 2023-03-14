@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
-    public static PlayerEnemy player;
+    public static PlayerEnemy Player { get { return GameManager.Instance.playerManager; } }
     private Queue<Note> notes;
 
     [SerializeField] private const float perfectRange = 0.05f;
     [SerializeField] private const float goodRange = 0.1f;
-    [SerializeField] private float spawnX = 0;
-    [SerializeField] private static float spawnY = 2.35f;
+    //[SerializeField] private float spawnX = 0;
+    //[SerializeField] private static float spawnY = 2.35f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +21,20 @@ public class Lane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (notes.Peek().timeLeft < - goodRange)
+        while (notes.Count != 0 && notes.Peek().timeLeft < -goodRange)
         {
             notes.Dequeue();
-            player.EvaluateHit(NoteHit.Miss);
+            Player.EvaluateHit(NoteHit.Miss);
         }
     }
 
-    public void AddNote(Note note)
+    public void AddNote(GameObject notePrefab)
     {
+        Note note = Instantiate(notePrefab, new Vector2(0, Note.spawnPosition), Quaternion.identity, transform).GetComponent<Note>();
         notes.Enqueue(note);
 
         // for testing
-        note.transform.position = new Vector2(spawnX, spawnY);
+        //note.transform.position = new Vector2(spawnX, spawnY);
     }
 
     public void Hit()
@@ -41,14 +42,14 @@ public class Lane : MonoBehaviour
         float timeLeft = notes.Peek().timeLeft;
         if (timeLeft < goodRange)
         {
-            if(timeLeft > perfectRange)
-                player.EvaluateHit(NoteHit.Good);
-            else if(timeLeft >= -perfectRange)
-                player.EvaluateHit(NoteHit.Perfect);
-            else if(timeLeft >= -goodRange)
-                player.EvaluateHit(NoteHit.Good);
+            if (timeLeft > perfectRange)
+                Player.EvaluateHit(NoteHit.Good);
+            else if (timeLeft >= -perfectRange)
+                Player.EvaluateHit(NoteHit.Perfect);
+            else if (timeLeft >= -goodRange)
+                Player.EvaluateHit(NoteHit.Good);
             else
-                player.EvaluateHit(NoteHit.Miss);
+                Player.EvaluateHit(NoteHit.Miss);
         }
         notes.Dequeue();
     }

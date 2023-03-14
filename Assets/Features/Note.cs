@@ -7,8 +7,8 @@ public class Note : MonoBehaviour
 {
     public static float noteDelay = 0.5f;
     public float timeLeft;
-    private static int spawnPosition = 0;
-    private static int hitPosition = 1000;
+    public static float spawnPosition = 2;
+    private static float hitPosition = 0;
 
     void Awake()
     {
