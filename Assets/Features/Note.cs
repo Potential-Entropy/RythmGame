@@ -7,8 +7,8 @@ public class Note : MonoBehaviour
 {
     public static float NoteDelay { get { return GameManager.Instance.noteDelay; } }
     public float timeLeft;
-    public static float spawnPosition = 400;
-    private static float hitPosition = 0;
+    private static float spawnPosition { get { return GameManager.Instance.NoteSpawnPosition; } }
+    private static float hitPosition { get { return GameManager.Instance.NoteHitPosition; } }
 
     void Awake()
     {

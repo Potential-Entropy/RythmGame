@@ -15,9 +15,16 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        NoteSpawnPosition = NoteSpawn.transform.position.y;
+        NoteHitPosition = NoteHit.transform.position.y;
     }
 
     public PlayerEnemy playerManager;
 
     public float noteDelay;
+
+    public GameObject NoteSpawn;
+    public GameObject NoteHit;
+    public float NoteSpawnPosition;
+    public float NoteHitPosition;
 }

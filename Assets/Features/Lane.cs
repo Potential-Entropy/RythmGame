@@ -22,7 +22,7 @@ public class Lane : MonoBehaviour
 
     public void AddNote(GameObject notePrefab)
     {
-        Note note = Instantiate(notePrefab, new Vector2(0, Note.spawnPosition), Quaternion.identity, transform).GetComponent<Note>();
+        Note note = Instantiate(notePrefab, new Vector2(0, GameManager.Instance.NoteSpawnPosition), Quaternion.identity, transform).GetComponent<Note>();
         notes.Enqueue(note);
 
         // for testing
@@ -42,8 +42,9 @@ public class Lane : MonoBehaviour
                 Player.EvaluateHit(NoteHit.Good);
             else
                 Player.EvaluateHit(NoteHit.Miss);
+
+            DiscardFirstNote();
         }
-        DiscardFirstNote();
     }
 
     private void DiscardFirstNote()
