@@ -48,6 +48,6 @@ public class Lane : MonoBehaviour
 
     private void DiscardFirstNote()
     {
-        Destroy(notes.Dequeue());
+        Destroy(notes.Dequeue().gameObject);
     }
 }

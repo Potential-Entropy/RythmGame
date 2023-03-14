@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public static float noteDelay = 0.5f;
+    public static float noteDelay = 1;
     public float timeLeft;
-    public static float spawnPosition = 0;
-    private static float hitPosition = 100;
+    public static float spawnPosition = 400;
+    private static float hitPosition = 0;
 
     void Awake()
     {
@@ -19,7 +19,7 @@ public class Note : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        GetComponent<RectTransform>().anchoredPosition = 
-            new Vector2(GetComponent<RectTransform>().anchoredPosition.x, Mathf.Lerp(hitPosition, spawnPosition, timeLeft / noteDelay));
+        GetComponent<RectTransform>().position = 
+            new Vector2(GetComponent<RectTransform>().position.x, GetComponent<RectTransform>().position.y - (spawnPosition - hitPosition) * Time.deltaTime / noteDelay);
     }
 }
