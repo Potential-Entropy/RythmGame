@@ -20,6 +20,9 @@ public class PlayerEnemy : MonoBehaviour
     [SerializeField] private TextMeshProUGUI comboDisplay;
     [SerializeField] private TextMeshProUGUI hitDisplay;
 
+    [SerializeField] private TextMeshProUGUI playerHealthBar;
+    [SerializeField] private TextMeshProUGUI enemyHealthBar;
+
     void Start()
     {
         playerHP = playerMaxHP;
@@ -52,13 +55,15 @@ public class PlayerEnemy : MonoBehaviour
     void DamagePlayer()
     {
         playerHP -= baseDamage;
+        playerHealthBar.text = playerHP.ToString();
         if(playerHP <= 0)
             Lose();
     }
 
     void DamageEnemy()
     {
-        enemyHP -= baseDamage * (1 + combo * 0.01f) ;
+        enemyHP -= baseDamage * (1 + combo * 0.01f);
+        enemyHealthBar.text = enemyHP.ToString();
         if (enemyHP <= 0)
             Win();
     }
