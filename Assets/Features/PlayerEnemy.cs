@@ -22,9 +22,7 @@ public class PlayerEnemy : MonoBehaviour
     [SerializeField] private TextMeshProUGUI comboDisplay;
     [SerializeField] private TextMeshProUGUI hitDisplay;
 
-    [SerializeField] private TextMeshProUGUI playerHealthValue;
     [SerializeField] private Slider playerHealthBar;
-    [SerializeField] private TextMeshProUGUI enemyHealthValue;
     [SerializeField] private Slider enemyHealthBar;
 
     void Start()
@@ -63,7 +61,6 @@ public class PlayerEnemy : MonoBehaviour
     void DamagePlayer()
     {
         playerHP -= baseDamage;
-        playerHealthValue.text = playerHP.ToString();
         playerHealthBar.value = playerHP;
         if (playerHP <= 0)
             Lose();
@@ -72,7 +69,6 @@ public class PlayerEnemy : MonoBehaviour
     void DamageEnemy()
     {
         enemyHP -= baseDamage * (1 + combo * 0.01f);
-        enemyHealthValue.text = enemyHP.ToString();
         enemyHealthBar.value = enemyHP;
         if (enemyHP <= 0)
             Win();
