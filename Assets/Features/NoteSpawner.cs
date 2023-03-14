@@ -18,7 +18,7 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private int[] noteSoundRef;*/
 
     [Header("X: Beat, Y: Lane Index, Z: Sound")]
-    [SerializeField] private Vector3Int[] noteInfos;
+    [SerializeField] private Vector3[] noteInfos;
 
     private float bps;
     float startTime;
@@ -27,6 +27,9 @@ public class NoteSpawner : MonoBehaviour
     int noteIndex = 0;
 
     public static float NoteDelay = 1f;
+    EventInstance songInstance;
+
+    [SerializeField] private FMODUnity.EventReference song;
 
     private void Awake()
     {
@@ -40,24 +43,23 @@ public class NoteSpawner : MonoBehaviour
     private void Start()
     {
         bps = bpm / 60f;
-        SpawnNote(2, 0);
-        StartMusic();
+        //SpawnNote(2, 0);
+        //StartMusic();
     }
 
     private void Update()
     {
-        if (!started) return;
-
-        timePassed = Time.time - startTime;
+        if (!started) StartMusic();
+        timePassed += Time.deltaTime;
+        //timePassed = Time.time - startTime;
         float pointInMusic = timePassed * bps;
-        Vector3Int currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3Int.zero;
+        Vector3 currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3.zero;
 
-        if (noteIndex < noteInfos.Length && (currentNote.x / bps) <= pointInMusic)
+        if (noteIndex < noteInfos.Length && (currentNote.x / bps - NoteDelay) <= timePassed)
         {
-            Debug.Log("Time passed: " + timePassed);
             //SpawnNote(noteIndex < noteLaneRef.Length ? noteLaneRef[noteIndex] : 0, noteIndex < noteSoundRef.Length ? noteSoundRef[noteIndex] : 0);
 
-            SpawnNote(currentNote.y, currentNote.z);
+            SpawnNote((int)currentNote.y, (int)currentNote.z);
 
             ++noteIndex;
         }
@@ -66,6 +68,9 @@ public class NoteSpawner : MonoBehaviour
     void StartMusic()
     {
         startTime = Time.time;
+        songInstance = FMODUnity.RuntimeManager.CreateInstance(song);
+        songInstance.start();
+
         noteIndex = 0;
         started = true;
     }
@@ -75,7 +80,7 @@ public class NoteSpawner : MonoBehaviour
         if (lane < lanes.Length && lane >= 0 && sound >= 0 && sound < noteSounds.Length)
         {
             lanes[lane].AddNote(note);
-            StartCoroutine(PlayNote(FMODUnity.RuntimeManager.CreateInstance(noteSounds[sound])));
+            //StartCoroutine(PlayNote(FMODUnity.RuntimeManager.CreateInstance(noteSounds[sound])));
         }
         else
         {
