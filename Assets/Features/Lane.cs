@@ -34,13 +34,13 @@ public class Lane : MonoBehaviour
         if (notes.Count != 0)
         {
             float timeLeft = notes.Peek().timeLeft;
-            if (timeLeft < goodRange)
+            if (timeLeft < GoodRange)
             {
-                if (timeLeft > perfectRange)
+                if (timeLeft > PerfectRange)
                     Player.EvaluateHit(NoteHit.Good);
-                else if (timeLeft >= -perfectRange)
+                else if (timeLeft >= -PerfectRange)
                     Player.EvaluateHit(NoteHit.Perfect);
-                else if (timeLeft >= -goodRange)
+                else if (timeLeft >= -GoodRange)
                     Player.EvaluateHit(NoteHit.Good);
                 else
                     Player.EvaluateHit(NoteHit.Miss);
