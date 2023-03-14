@@ -9,6 +9,8 @@ public class Lane : MonoBehaviour
 
     [SerializeField] private const float perfectRange = 0.05f;
     [SerializeField] private const float goodRange = 0.1f;
+    [SerializeField] private float spawnX = 0;
+    [SerializeField] private static float spawnY = 2.35f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,9 @@ public class Lane : MonoBehaviour
     public void AddNote(Note note)
     {
         notes.Enqueue(note);
+
+        // for testing
+        note.transform.position = new Vector2(spawnX, spawnY);
     }
 
     public void Hit()

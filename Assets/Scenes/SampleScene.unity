@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &61807464 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9139011941441372917, guid: a8a5a9d6244ac3d49bd1d1f4d86e00d7, type: 3}
-  m_PrefabInstance: {fileID: 5269929824522061963}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &222295719 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9139011941441372917, guid: a8a5a9d6244ac3d49bd1d1f4d86e00d7, type: 3}
@@ -1000,7 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e46ebbbac6f9e44841b3ab0f191d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note: {fileID: 0}
+  note: {fileID: 8452310275247840613, guid: 879ed59e63d7d9a4c8ca1a98ce8a22ae, type: 3}
   lanes: []
 --- !u!1001 &2083828403
 PrefabInstance:
@@ -1334,23 +1329,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3717966492584604390, guid: a8a5a9d6244ac3d49bd1d1f4d86e00d7, type: 3}
   m_PrefabInstance: {fileID: 5269929824522061963}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5269929824522061968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61807464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cc646015cd2164c824264449f45cce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeLeft: 0
-  testSound:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
