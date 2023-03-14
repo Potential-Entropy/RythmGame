@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum NoteHit
 {
@@ -70,11 +71,11 @@ public class PlayerEnemy : MonoBehaviour
 
     void Win()
     {
-        //TODO End game
+        SceneManager.LoadScene(2);
     }
 
     void Lose()
     {
-        //TODO End game
+        SceneManager.LoadScene(3);
     }
 }
