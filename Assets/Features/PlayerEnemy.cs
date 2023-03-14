@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public enum NoteHit
@@ -15,6 +16,9 @@ public class PlayerEnemy : MonoBehaviour
     private float enemyHP;
     private int combo;
     [SerializeField] private const float baseDamage = 10;
+
+    [SerializeField] private TextMeshProUGUI comboDisplay;
+    [SerializeField] private TextMeshProUGUI hitDisplay;
 
     void Start()
     {
@@ -40,6 +44,9 @@ public class PlayerEnemy : MonoBehaviour
                 DamagePlayer(); 
                 break;
         }
+        comboDisplay.text = combo.ToString();
+        hitDisplay.text = hit.ToString();
+
     }
 
     void DamagePlayer()
