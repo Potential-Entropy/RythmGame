@@ -842,6 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManager: {fileID: 939226875}
+  noteDelay: 1
 --- !u!4 &1008728556
 Transform:
   m_ObjectHideFlags: 0

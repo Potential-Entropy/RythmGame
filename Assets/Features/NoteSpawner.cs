@@ -8,7 +8,7 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private GameObject note;
     [SerializeField] private Lane[] lanes;
     [SerializeField] private FMODUnity.EventReference[] noteSounds;
-    public static float noteDelay = 0.5f;
+    public static float NoteDelay { get{ return GameManager.Instance.noteDelay; } }
 
     // for testing only
     private void Start()
@@ -35,7 +35,7 @@ public class NoteSpawner : MonoBehaviour
     
     IEnumerator PlayNote(EventInstance instance)
     {
-        yield return new WaitForSeconds(noteDelay);
+        yield return new WaitForSeconds(NoteDelay);
         instance.start();
         instance.release();
     }

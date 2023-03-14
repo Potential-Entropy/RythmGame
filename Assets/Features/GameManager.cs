@@ -18,4 +18,6 @@ public class GameManager : MonoBehaviour
     }
 
     public PlayerEnemy playerManager;
+
+    public float noteDelay;
 }
