@@ -1496,9 +1496,10 @@ MonoBehaviour:
       Data4: 847068403
     Path: event:/TestSound
   bpm: 130
-  noteBeats: 050000000a0000000f000000
-  noteLaneRef: 010000000300000002000000
-  noteSoundRef: 000000000000000000000000
+  noteInfos:
+  - {x: 5, y: 0, z: 0}
+  - {x: 15, y: 1, z: 0}
+  - {x: 23, y: 3, z: 0}
 --- !u!1 &1846526760
 GameObject:
   m_ObjectHideFlags: 0

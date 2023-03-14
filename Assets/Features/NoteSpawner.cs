@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using FMOD.Studio;
 using UnityEngine;
 
+
 public class NoteSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject note;
@@ -11,10 +12,13 @@ public class NoteSpawner : MonoBehaviour
 
     [SerializeField] private float bpm = 130f;
 
-    [Header("Level Design Notes")]
+    /*[Header("Level Design Notes")]
     [SerializeField] private int[] noteBeats;
     [SerializeField] private int[] noteLaneRef;
-    [SerializeField] private int[] noteSoundRef;
+    [SerializeField] private int[] noteSoundRef;*/
+
+    [Header("X: Beat, Y: Lane Index, Z: Sound")]
+    [SerializeField] private Vector3Int[] noteInfos;
 
     private float bps;
     float startTime;
@@ -46,14 +50,14 @@ public class NoteSpawner : MonoBehaviour
 
         timePassed = Time.time - startTime;
         float pointInMusic = timePassed * bps;
-        
-        if (noteIndex < noteBeats.Length && (noteBeats[noteIndex] / bps) <= pointInMusic)
+        Vector3Int currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3Int.zero;
+
+        if (noteIndex < noteInfos.Length && (currentNote.x / bps) <= pointInMusic)
         {
             Debug.Log("Time passed: " + timePassed);
-            //Debug.Log("Spawning note: " + (noteIndex) + ", "  + (noteBeats[noteIndex] / bps) + ", " + noteLaneRef[noteIndex] + ", " +  noteSoundRef[noteIndex]);
+            //SpawnNote(noteIndex < noteLaneRef.Length ? noteLaneRef[noteIndex] : 0, noteIndex < noteSoundRef.Length ? noteSoundRef[noteIndex] : 0);
 
-            SpawnNote(noteIndex < noteLaneRef.Length ? noteLaneRef[noteIndex] : 0, noteIndex < noteSoundRef.Length ? noteSoundRef[noteIndex] : 0);
-            //SpawnNote(noteLaneRef[noteIndex], noteSoundRef[noteIndex]);
+            SpawnNote(currentNote.y, currentNote.z);
 
             ++noteIndex;
         }
@@ -70,10 +74,6 @@ public class NoteSpawner : MonoBehaviour
     {
         if (lane < lanes.Length && lane >= 0 && sound >= 0 && sound < noteSounds.Length)
         {
-            // for testing
-            Debug.Log("Spawning Note in lane: " + lane);
-
-
             lanes[lane].AddNote(note);
             StartCoroutine(PlayNote(FMODUnity.RuntimeManager.CreateInstance(noteSounds[sound])));
         }
