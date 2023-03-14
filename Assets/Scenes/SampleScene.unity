@@ -883,6 +883,8 @@ MonoBehaviour:
   NoteHit: {fileID: 1196159098}
   NoteSpawnPosition: 0
   NoteHitPosition: 0
+  pefectRange: 0.05
+  goodRange: 0.1
 --- !u!4 &1008728556
 Transform:
   m_ObjectHideFlags: 0
@@ -1210,6 +1212,10 @@ MonoBehaviour:
       Data3: -1729650023
       Data4: 847068403
     Path: event:/TestSound
+  bpm: 120
+  noteBeats: 050000000f00000023000000
+  noteLaneRef: 000000000100000002000000
+  noteSoundRef: 000000000000000000000000
 --- !u!1 &1939190759
 GameObject:
   m_ObjectHideFlags: 0

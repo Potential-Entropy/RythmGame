@@ -8,12 +8,54 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private GameObject note;
     [SerializeField] private Lane[] lanes;
     [SerializeField] private FMODUnity.EventReference[] noteSounds;
-    public static float NoteDelay { get{ return GameManager.Instance.noteDelay; } }
+
+    [SerializeField] private float bpm = 130f;
+
+    [Header("Level Design Notes")]
+    [SerializeField] private int[] noteBeats;
+    [SerializeField] private int[] noteLaneRef;
+    [SerializeField] private int[] noteSoundRef;
+
+    private float bps;
+    float startTime;
+    float timePassed = 0f;
+    bool started = false;
+    int noteIndex = 0;
+
+    public static float NoteDelay = 1f;
 
     // for testing only
     private void Start()
     {
-        SpawnNote(0, 0);
+        bps = bpm / 60f;
+        SpawnNote(2, 0);
+        StartMusic();
+    }
+
+    private void Update()
+    {
+        if (!started) return;
+
+        timePassed = Time.time - startTime;
+        float pointInMusic = timePassed * bps;
+        
+        if (noteIndex < noteBeats.Length && (noteBeats[noteIndex] / bps) <= pointInMusic)
+        {
+            Debug.Log("Time passed: " + timePassed);
+            //Debug.Log("Spawning note: " + (noteIndex) + ", "  + (noteBeats[noteIndex] / bps) + ", " + noteLaneRef[noteIndex] + ", " +  noteSoundRef[noteIndex]);
+
+            SpawnNote(noteIndex < noteLaneRef.Length ? noteLaneRef[noteIndex] : 0, noteIndex < noteSoundRef.Length ? noteSoundRef[noteIndex] : 0);
+            //SpawnNote(noteLaneRef[noteIndex], noteSoundRef[noteIndex]);
+
+            ++noteIndex;
+        }
+    }
+
+    void StartMusic()
+    {
+        startTime = Time.time;
+        noteIndex = 0;
+        started = true;
     }
 
     void SpawnNote(int lane, int sound)
@@ -21,7 +63,7 @@ public class NoteSpawner : MonoBehaviour
         if (lane < lanes.Length && lane >= 0 && sound >= 0 && sound < noteSounds.Length)
         {
             // for testing
-            Debug.Log("Spawning Note");
+            Debug.Log("Spawning Note in lane: " + lane);
 
 
             lanes[lane].AddNote(note);
