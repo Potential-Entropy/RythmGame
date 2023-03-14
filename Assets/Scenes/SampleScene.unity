@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.745283, g: 0.052029163, b: 0.052029163, a: 0.392}
+  m_Color: {r: 0.745283, g: 0.052029163, b: 0.052029163, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1125,11 +1125,11 @@ MonoBehaviour:
   - {fileID: 222295725}
   noteSounds:
   - Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1959157939
+      Data2: 1074683639
+      Data3: -1729650023
+      Data4: 847068403
+    Path: event:/TestSound
 --- !u!1001 &2083828403
 PrefabInstance:
   m_ObjectHideFlags: 0
