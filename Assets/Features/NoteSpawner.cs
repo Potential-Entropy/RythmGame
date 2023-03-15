@@ -13,7 +13,7 @@ public class NoteSpawner : MonoBehaviour
     private Vector3[] noteInfos;
     private FMODUnity.EventReference songF;
     private PLAYBACK_STATE state;
-    private EventInstance songInstance;
+    public static EventInstance songInstance;
 
     private float bps;
     private float timePassed = 0f;
@@ -37,10 +37,10 @@ public class NoteSpawner : MonoBehaviour
     private void Start()
     {
         //StartMusic();
+        started = false;
         bps = songObject.bpm / 60f;
         noteInfos = songObject.noteInfos;
         songF = songObject.song;
-
     }
 
     private void Update()

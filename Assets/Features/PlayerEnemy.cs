@@ -83,6 +83,9 @@ public class PlayerEnemy : MonoBehaviour
 
     void Lose()
     {
+        NoteSpawner.songInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        NoteSpawner.songInstance.release();
         SceneManager.LoadScene(3);
+
     }
 }
