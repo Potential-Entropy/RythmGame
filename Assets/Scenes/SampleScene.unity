@@ -290,6 +290,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1809962321877161340, guid: 568294f4e5988b345857210453de24bc, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809962321877161340, guid: 568294f4e5988b345857210453de24bc, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809962321877161340, guid: 568294f4e5988b345857210453de24bc, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5813470265842496744, guid: 568294f4e5988b345857210453de24bc, type: 3}
       propertyPath: m_Name
       value: LaneHighlight (1)
@@ -1940,6 +1952,13 @@ MonoBehaviour:
   pefectRange: 0.05
   goodRange: 0.1
   LanePanel: {fileID: 1702485327}
+  LaneSound:
+    Guid:
+      Data1: 729072427
+      Data2: 1094312247
+      Data3: 255047059
+      Data4: -1297016527
+    Path: event:/LaneSound
   VFXManager: {fileID: 885328886}
 --- !u!4 &1008728556
 Transform:
@@ -3354,6 +3373,26 @@ PrefabInstance:
     - target: {fileID: 1809962321877161340, guid: 568294f4e5988b345857210453de24bc, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702987533107202952, guid: 568294f4e5988b345857210453de24bc, type: 3}
+      propertyPath: Sound.Path
+      value: event:/LaneSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702987533107202952, guid: 568294f4e5988b345857210453de24bc, type: 3}
+      propertyPath: Sound.Guid.Data1
+      value: 729072427
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702987533107202952, guid: 568294f4e5988b345857210453de24bc, type: 3}
+      propertyPath: Sound.Guid.Data2
+      value: 1094312247
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702987533107202952, guid: 568294f4e5988b345857210453de24bc, type: 3}
+      propertyPath: Sound.Guid.Data3
+      value: 255047059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702987533107202952, guid: 568294f4e5988b345857210453de24bc, type: 3}
+      propertyPath: Sound.Guid.Data4
+      value: -1297016527
       objectReference: {fileID: 0}
     - target: {fileID: 5813470265842496744, guid: 568294f4e5988b345857210453de24bc, type: 3}
       propertyPath: m_Name
