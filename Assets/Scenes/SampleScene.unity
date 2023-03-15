@@ -1719,8 +1719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc94502faa87694b829bcb9510f9971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8452310275247840613, guid: 34c7003aaddf4db41ab40fce0386d94b, type: 3}
-  deflectedPrefab: {fileID: 8452310275247840613, guid: 4217ac3d9e7a5734a92d8fb232971d48, type: 3}
+  projectilePrefab: {fileID: 8452310275247840613, guid: 7bee2deeb309a0c4d8ecd4b16b37ddec, type: 3}
+  deflectedPrefab: {fileID: 8452310275247840613, guid: 2d198a96e304de64b9d8c78e0cdb6eb9, type: 3}
   monsterPosition: {fileID: 535256600}
   threshold: 10
   speed: 10
@@ -2719,7 +2719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e46ebbbac6f9e44841b3ab0f191d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note: {fileID: 8452310275247840613, guid: 879ed59e63d7d9a4c8ca1a98ce8a22ae, type: 3}
+  note: {fileID: 8452310275247840613, guid: 5494c47da5380244eb04a2b400262eb5, type: 3}
   lanes:
   - {fileID: 5269929824522061968}
   - {fileID: 832015647}
