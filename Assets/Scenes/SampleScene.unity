@@ -2716,26 +2716,14 @@ MonoBehaviour:
   - {x: 32, y: 1, z: 0}
   - {x: 32.5, y: 2, z: 0}
   - {x: 33, y: 1, z: 0}
-  - {x: 33.5, y: 2, z: 0}
-  - {x: 34, y: 1, z: 0}
-  - {x: 34.5, y: 2, z: 0}
-  - {x: 35, y: 0, z: 0}
-  - {x: 35.5, y: 2, z: 0}
-  - {x: 36, y: 1, z: 0}
-  - {x: 36.5, y: 2, z: 0}
-  - {x: 37, y: 1, z: 0}
-  - {x: 37.5, y: 2, z: 0}
-  - {x: 38, y: 1, z: 0}
-  - {x: 38.5, y: 2, z: 0}
-  - {x: 39, y: 0, z: 0}
-  - {x: 39.5, y: 2, z: 0}
-  song:
+  songF:
     Guid:
-      Data1: 710047835
-      Data2: 1228858609
-      Data3: -913597022
-      Data4: -328401723
-    Path: event:/Music
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  songObject: {fileID: 11400000, guid: dec41740f33fadc47bb1afadf86e0b2e, type: 2}
 --- !u!1 &1846526760
 GameObject:
   m_ObjectHideFlags: 0

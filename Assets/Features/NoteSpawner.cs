@@ -10,26 +10,20 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private Lane[] lanes;
     [SerializeField] private FMODUnity.EventReference[] noteSounds;
 
-    [SerializeField] private float bpm = 130f;
-
-    /*[Header("Level Design Notes")]
-    [SerializeField] private int[] noteBeats;
-    [SerializeField] private int[] noteLaneRef;
-    [SerializeField] private int[] noteSoundRef;*/
-
-    [Header("X: Beat, Y: Lane Index, Z: Sound")]
-    [SerializeField] private Vector3[] noteInfos;
+    private Vector3[] noteInfos;
+    private FMODUnity.EventReference songF;
+    private PLAYBACK_STATE state;
+    private EventInstance songInstance;
 
     private float bps;
-    float startTime;
-    float timePassed = 0f;
-    bool started = false;
-    int noteIndex = 0;
-
+    private float timePassed = 0f;
+    private bool started = false;
+    private int noteIndex = 0;
+    
     public static float NoteDelay = 1f;
-    EventInstance songInstance;
 
-    [SerializeField] private FMODUnity.EventReference song;
+    public Song songObject;
+
 
     private void Awake()
     {
@@ -39,39 +33,47 @@ public class NoteSpawner : MonoBehaviour
             lanes[i].xPosition = (i + 0.5f) * laneWidth;
         }
     }
-    // for testing only
+
     private void Start()
     {
-        bps = bpm / 60f;
-        //SpawnNote(2, 0);
         //StartMusic();
+        bps = songObject.bpm / 60f;
+        noteInfos = songObject.noteInfos;
+        songF = songObject.song;
+
     }
 
     private void Update()
     {
-        if (!started) StartMusic();
-        timePassed += Time.deltaTime;
-        //timePassed = Time.time - startTime;
-        float pointInMusic = timePassed * bps;
-        Vector3 currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3.zero;
+        if (!started)
+        {
+            songInstance = FMODUnity.RuntimeManager.CreateInstance(songF);
+            StartMusic();
+        }        
 
+        songInstance.getPlaybackState(out state);
+        if (state == PLAYBACK_STATE.STOPPING || state == PLAYBACK_STATE.STOPPED)
+            StartMusic();
+
+        timePassed += Time.deltaTime;
+
+        var currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3.zero;
         if (noteIndex < noteInfos.Length && (currentNote.x / bps - NoteDelay) <= timePassed)
         {
-            //SpawnNote(noteIndex < noteLaneRef.Length ? noteLaneRef[noteIndex] : 0, noteIndex < noteSoundRef.Length ? noteSoundRef[noteIndex] : 0);
-
             SpawnNote((int)currentNote.y, (int)currentNote.z);
-
             ++noteIndex;
         }
     }
 
     void StartMusic()
     {
-        startTime = Time.time;
-        songInstance = FMODUnity.RuntimeManager.CreateInstance(song);
+        // Resetting
+        timePassed = 0;
+        noteIndex = 0;
+
+        // Playing the Song
         songInstance.start();
 
-        noteIndex = 0;
         started = true;
     }
 
