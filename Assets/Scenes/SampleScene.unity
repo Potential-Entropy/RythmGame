@@ -1362,6 +1362,7 @@ GameObject:
   - component: {fileID: 885328884}
   - component: {fileID: 885328883}
   - component: {fileID: 885328882}
+  - component: {fileID: 885328886}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1456,6 +1457,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &885328886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885328881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc94502faa87694b829bcb9510f9971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8452310275247840613, guid: 34c7003aaddf4db41ab40fce0386d94b, type: 3}
+  deflectedPrefab: {fileID: 8452310275247840613, guid: 4217ac3d9e7a5734a92d8fb232971d48, type: 3}
+  monsterPosition: {fileID: 535256600}
+  threshold: 10
+  speed: 10
 --- !u!1 &898639255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1634,7 @@ MonoBehaviour:
   pefectRange: 0.05
   goodRange: 0.1
   LanePanel: {fileID: 1702485327}
+  VFXManager: {fileID: 885328886}
 --- !u!4 &1008728556
 Transform:
   m_ObjectHideFlags: 0

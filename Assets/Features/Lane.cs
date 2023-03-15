@@ -18,7 +18,7 @@ public class Lane : MonoBehaviour
         while (notes.Count != 0 && notes.Peek().timeLeft < -GoodRange)
         {
             DiscardFirstNote();
-            Player.EvaluateHit(NoteHit.Miss);
+            Player.EvaluateHit(NoteHit.Miss, 0);
         }
     }
 
@@ -36,13 +36,13 @@ public class Lane : MonoBehaviour
             if (timeLeft < GoodRange)
             {
                 if (timeLeft > PerfectRange)
-                    Player.EvaluateHit(NoteHit.Good);
+                    Player.EvaluateHit(NoteHit.Good, xPosition);
                 else if (timeLeft >= -PerfectRange)
-                    Player.EvaluateHit(NoteHit.Perfect);
+                    Player.EvaluateHit(NoteHit.Perfect, xPosition);
                 else if (timeLeft >= -GoodRange)
-                    Player.EvaluateHit(NoteHit.Good);
+                    Player.EvaluateHit(NoteHit.Good, xPosition);
                 else
-                    Player.EvaluateHit(NoteHit.Miss);
+                    Player.EvaluateHit(NoteHit.Miss, 0f);
 
                 DiscardFirstNote();
             }

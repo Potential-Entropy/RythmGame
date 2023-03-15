@@ -36,16 +36,17 @@ public class PlayerEnemy : MonoBehaviour
         combo = 0;
     }
 
-    public void EvaluateHit(NoteHit hit)
+    public void EvaluateHit(NoteHit hit, float xPosition)
     {
         Debug.Log(hit.ToString());
         switch (hit)
         {
             case NoteHit.Perfect: 
                 combo++; 
-                DamageEnemy(); 
+                DamageEnemy(xPosition); 
                 break;
-            case NoteHit.Good: 
+            case NoteHit.Good:
+                GameManager.Instance.VFXManager.Deflect(new Vector2(xPosition, 0));
                 combo++; 
                 break; 
             case NoteHit.Miss: 
@@ -66,10 +67,11 @@ public class PlayerEnemy : MonoBehaviour
             Lose();
     }
 
-    void DamageEnemy()
+    void DamageEnemy(float xPosition)
     {
         enemyHP -= baseDamage * (1 + combo * 0.01f);
         enemyHealthBar.value = enemyHP;
+        GameManager.Instance.VFXManager.Reflect(new Vector2(xPosition, 0));
         if (enemyHP <= 0)
             Win();
     }

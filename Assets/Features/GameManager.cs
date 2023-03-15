@@ -32,4 +32,6 @@ public class GameManager : MonoBehaviour
     public float goodRange = 0.1f;
 
     public GameObject LanePanel;
+
+    public VFXManager VFXManager;
 }
