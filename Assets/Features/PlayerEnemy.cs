@@ -73,7 +73,8 @@ public class PlayerEnemy : MonoBehaviour
         enemyHP -= baseDamage * (1 + combo * 0.01f);
         enemyHealthBar.value = enemyHP;
         GameManager.Instance.VFXManager.Reflect(new Vector2(xPosition, 0));
-        GameManager.Instance.noteSpawner.SetPlaybackSpeed(Mathf.Lerp(1.0f, 1.2f, 1.0f - enemyHP / enemyMaxHP));
+        if(2 * enemyHP <= enemyMaxHP) { }
+        GameManager.Instance.noteSpawner.SetPlaybackSpeed(Mathf.Lerp(1.0f, 1.2f, 1.0f - 2 * enemyHP / enemyMaxHP));
         if (enemyHP <= 0)
             Win();
     }

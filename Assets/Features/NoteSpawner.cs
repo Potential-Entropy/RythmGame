@@ -121,7 +121,7 @@ public class NoteSpawner : MonoBehaviour
             songInstance.setPitch(speed);
             float pitch;
             songInstance.getParameterByName("Pitch", out pitch);
-            songInstance.setParameterByName("Pitch", pitch / speed);
+            songInstance.setParameterByName("Pitch", speed / pitch);
         }
     }
 }
