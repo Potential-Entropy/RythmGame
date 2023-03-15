@@ -12,6 +12,8 @@ public class Lane : MonoBehaviour
     private static float PerfectRange { get { return GameManager.Instance.pefectRange; } }
     private static float GoodRange { get { return GameManager.Instance.goodRange; } }
 
+    [SerializeField] private LaneHighlight highlight;
+
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +32,7 @@ public class Lane : MonoBehaviour
 
     public void Hit()
     {
+        highlight.Show();
         if (notes.Count != 0)
         {
             float timeLeft = notes.Peek().timeLeft;
