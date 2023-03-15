@@ -14,7 +14,7 @@ public class Note : MonoBehaviour
 
     void Awake()
     {
-        timeLeft = NoteDelay + 0.2f;
+        timeLeft = NoteDelay;
     }
 
     // Update is called once per frame
