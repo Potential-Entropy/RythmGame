@@ -64,8 +64,8 @@ public class PlayerEnemy : MonoBehaviour
         playerHP -= baseDamage;
         playerHealthBar.value = playerHP;
         GameManager.Instance.noteSpawner.SetDisharmony(1.0f - playerHP / playerMaxHP);
-        if (playerHP <= 0)
-            Lose();
+        if (playerHP <= 0) { }
+            //Lose();
     }
 
     void DamageEnemy(float xPosition)
@@ -80,14 +80,19 @@ public class PlayerEnemy : MonoBehaviour
 
     void Win()
     {
+        StopMusic();
         SceneManager.LoadScene(2);
     }
 
     void Lose()
     {
+        StopMusic();
+        SceneManager.LoadScene(3);
+    }
+
+    void StopMusic()
+    {
         NoteSpawner.songInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         NoteSpawner.songInstance.release();
-        SceneManager.LoadScene(3);
-
     }
 }
