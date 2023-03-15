@@ -19,7 +19,12 @@ public class NoteSpawner : MonoBehaviour
     private float timePassed = 0f;
     private bool started = false;
     private int noteIndex = 0;
-    
+   
+    private float startTime;
+
+    private float disharmony = 0;
+    private float speed = 1;
+
     public static float NoteDelay = 1f;
 
     public Song songObject;
@@ -28,7 +33,7 @@ public class NoteSpawner : MonoBehaviour
     private void Awake()
     {
         float laneWidth = 1.0f * Screen.width / lanes.Length;
-        for(int i = 0; i < lanes.Length; i++)
+        for (int i = 0; i < lanes.Length; i++)
         {
             lanes[i].xPosition = (i + 0.5f) * laneWidth;
         }
@@ -49,13 +54,13 @@ public class NoteSpawner : MonoBehaviour
         {
             songInstance = FMODUnity.RuntimeManager.CreateInstance(songF);
             StartMusic();
-        }        
+        }
 
         songInstance.getPlaybackState(out state);
         if (state == PLAYBACK_STATE.STOPPING || state == PLAYBACK_STATE.STOPPED)
             StartMusic();
 
-        timePassed += Time.deltaTime;
+        timePassed += Time.deltaTime * speed;
 
         var currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3.zero;
         if (noteIndex < noteInfos.Length && (currentNote.x / bps - NoteDelay) <= timePassed)
@@ -89,11 +94,34 @@ public class NoteSpawner : MonoBehaviour
             Debug.Log("Invalid SpawnNote parameter");
         }
     }
-    
+
     IEnumerator PlayNote(EventInstance instance)
     {
         yield return new WaitForSeconds(NoteDelay);
         instance.start();
         instance.release();
+    }
+
+    public void SetDisharmony(float disharmony)
+    {
+        this.disharmony = disharmony;
+        if (songInstance.isValid())
+        {
+            float pitch;
+            songInstance.getParameterByName("Pitch", out pitch);
+            songInstance.setParameterByName("Pitch", pitch + disharmony / 3.0f);
+        }
+    }
+
+    public void SetPlaybackSpeed(float speed)
+    {
+        this.speed = speed;
+        if (songInstance.isValid())
+        {
+            songInstance.setPitch(speed);
+            float pitch;
+            songInstance.getParameterByName("Pitch", out pitch);
+            songInstance.setParameterByName("Pitch", pitch / speed);
+        }
     }
 }

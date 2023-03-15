@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        FMODUnity.RuntimeManager.LoadBank("Master");
+
         NoteSpawnPosition = NoteSpawn.GetComponent<RectTransform>().position.y;
         NoteHitPosition = NoteHit.GetComponent<RectTransform>().position.y;
     }
@@ -34,4 +36,6 @@ public class GameManager : MonoBehaviour
     public GameObject LanePanel;
 
     public VFXManager VFXManager;
+
+    public NoteSpawner noteSpawner;
 }

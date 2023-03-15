@@ -1953,6 +1953,7 @@ MonoBehaviour:
   goodRange: 0.1
   LanePanel: {fileID: 1702485327}
   VFXManager: {fileID: 885328886}
+  noteSpawner: {fileID: 1702485331}
 --- !u!4 &1008728556
 Transform:
   m_ObjectHideFlags: 0
