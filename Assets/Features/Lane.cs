@@ -35,7 +35,7 @@ public class Lane : MonoBehaviour
         highlight.Show();
         if (notes.Count != 0)
         {
-            float timeLeft = notes.Peek().timeLeft;
+            float timeLeft = notes.Peek().timeLeft + 0.01f;
             if (timeLeft < GoodRange)
             {
                 if (timeLeft > PerfectRange)
