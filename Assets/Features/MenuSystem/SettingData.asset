@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3bf2360f26661b47b47f88431beb545, type: 3}
   m_Name: SettingData
   m_EditorClassIdentifier: 
-  timingOffset: 0.15
-  terribleMode: 1
+  timingOffset: -0.2
+  terribleMode: 0
