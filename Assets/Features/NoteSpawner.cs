@@ -25,6 +25,8 @@ public class NoteSpawner : MonoBehaviour
     private float disharmony = 0;
     private float speed = 1f;
 
+    [SerializeField] private float offset = 0f;
+
     public static float NoteDelay {get { return GameManager.Instance.noteDelay; } }
 
     public Song songObject;
@@ -63,7 +65,7 @@ public class NoteSpawner : MonoBehaviour
         timePassed += Time.deltaTime * speed;
 
         var currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3.zero;
-        if (noteIndex < noteInfos.Length && (currentNote.x / bps - NoteDelay) < timePassed)
+        if (noteIndex < noteInfos.Length && (currentNote.x / bps - NoteDelay + offset) < timePassed)
         {
             SpawnNote((int)currentNote.y, (int)currentNote.z);
             ++noteIndex;
@@ -72,13 +74,9 @@ public class NoteSpawner : MonoBehaviour
 
     void StartMusic()
     {
-        // Resetting
         timePassed = 0;
         noteIndex = 0;
-
-        // Playing the Song
         songInstance.start();
-
         started = true;
     }
 

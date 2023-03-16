@@ -2733,6 +2733,7 @@ MonoBehaviour:
       Data3: -913597022
       Data4: -328401723
     Path: event:/Music
+  offset: 0
   songObject: {fileID: 11400000, guid: dec41740f33fadc47bb1afadf86e0b2e, type: 2}
 --- !u!1 &1846526760
 GameObject:
