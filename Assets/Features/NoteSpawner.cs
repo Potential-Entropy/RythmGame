@@ -23,9 +23,9 @@ public class NoteSpawner : MonoBehaviour
     private float startTime;
 
     private float disharmony = 0;
-    private float speed = 1;
+    private float speed = 1f;
 
-    public static float NoteDelay = 1f;
+    public static float NoteDelay {get { return GameManager.Instance.noteDelay; } }
 
     public Song songObject;
 

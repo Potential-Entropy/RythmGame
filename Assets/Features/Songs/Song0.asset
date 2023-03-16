@@ -19,7 +19,7 @@ MonoBehaviour:
       Data3: -913597022
       Data4: -328401723
     Path: event:/Music
-  bpm: 168
+  bpm: 180
   noteInfos:
   - {x: 16, y: 1, z: 0}
   - {x: 20, y: 0, z: 0}

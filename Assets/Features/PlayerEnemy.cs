@@ -63,9 +63,9 @@ public class PlayerEnemy : MonoBehaviour
     {
         playerHP -= baseDamage;
         playerHealthBar.value = playerHP;
-        //GameManager.Instance.noteSpawner.SetDisharmony(1.0f - playerHP / playerMaxHP);
-        if (playerHP <= 0) { }
-            //Lose();
+        GameManager.Instance.noteSpawner.SetDisharmony(1.0f - playerHP / playerMaxHP);
+        if (playerHP <= 0)
+            Lose();
     }
 
     void DamageEnemy(float xPosition)
@@ -75,8 +75,8 @@ public class PlayerEnemy : MonoBehaviour
         GameManager.Instance.VFXManager.Reflect(new Vector2(xPosition, 0));
         if(2 * enemyHP <= enemyMaxHP) { }
         GameManager.Instance.noteSpawner.SetPlaybackSpeed(Mathf.Lerp(1.0f, 1.2f, 1.0f - 2 * enemyHP / enemyMaxHP));
-        //if (enemyHP <= 0)
-        //    Win();
+        if (enemyHP <= 0)
+            Win();
     }
 
     void Win()
