@@ -19,4 +19,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void ToSettings()
+    {
+        SceneManager.LoadScene(4);
+    }
 }

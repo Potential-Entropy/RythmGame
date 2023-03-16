@@ -14,7 +14,7 @@ public class Note : MonoBehaviour
 
     void Awake()
     {
-        timeLeft = NoteDelay;
+        timeLeft = NoteDelay + GameManager.Instance.settingsData.timingOffset;
     }
 
     // Update is called once per frame

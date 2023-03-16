@@ -104,24 +104,30 @@ public class NoteSpawner : MonoBehaviour
 
     public void SetDisharmony(float disharmony)
     {
-        this.disharmony = disharmony;
-        if (songInstance.isValid())
+        if (GameManager.Instance.settingsData.terribleMode)
         {
-            float pitch;
-            songInstance.getParameterByName("Pitch", out pitch);
-            songInstance.setParameterByName("Pitch", pitch + disharmony / 3.0f);
+            this.disharmony = disharmony;
+            if (songInstance.isValid())
+            {
+                float pitch;
+                songInstance.getParameterByName("Pitch", out pitch);
+                songInstance.setParameterByName("Pitch", pitch + disharmony / 3.0f);
+            }
         }
     }
 
     public void SetPlaybackSpeed(float speed)
     {
-        this.speed = speed;
-        if (songInstance.isValid())
+        if (GameManager.Instance.settingsData.terribleMode)
         {
-            songInstance.setPitch(speed);
-            float pitch;
-            songInstance.getParameterByName("Pitch", out pitch);
-            songInstance.setParameterByName("Pitch", speed / pitch);
+            this.speed = speed;
+            if (songInstance.isValid())
+            {
+                songInstance.setPitch(speed);
+                float pitch;
+                songInstance.getParameterByName("Pitch", out pitch);
+                songInstance.setParameterByName("Pitch", speed / pitch);
+            }
         }
     }
 }

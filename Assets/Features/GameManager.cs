@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
     private void Awake()
     {
         if (Instance != null)
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
         NoteSpawnPosition = NoteSpawn.GetComponent<RectTransform>().position.y;
         NoteHitPosition = NoteHit.GetComponent<RectTransform>().position.y;
     }
+
+    public Settings settingsData;
 
     public PlayerEnemy playerManager;
 
