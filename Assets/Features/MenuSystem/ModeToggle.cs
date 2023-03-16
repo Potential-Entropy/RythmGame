@@ -7,6 +7,11 @@ using UnityEngine.UI;
 public class ModeToggle : MonoBehaviour
 {
     [SerializeField] private Settings settingsData;
+
+    void Awake()
+    {
+        GetComponent<Toggle>().isOn = settingsData.terribleMode;
+    }
     public void SetMode()
     {
         settingsData.terribleMode = GetComponent<Toggle>().isOn;
