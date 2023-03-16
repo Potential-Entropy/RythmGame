@@ -1722,6 +1722,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8452310275247840613, guid: 7bee2deeb309a0c4d8ecd4b16b37ddec, type: 3}
   deflectedPrefab: {fileID: 8452310275247840613, guid: 2d198a96e304de64b9d8c78e0cdb6eb9, type: 3}
   monsterPosition: {fileID: 535256600}
+  hitDisplay: {fileID: 1846526762}
   threshold: 10
   speed: 10
 --- !u!1 &898639255
@@ -1791,7 +1792,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboDisplay: {fileID: 1536106928}
-  hitDisplay: {fileID: 1846526762}
   playerHealthBar: {fileID: 758903361}
   enemyHealthBar: {fileID: 1866827888}
 --- !u!4 &939226876

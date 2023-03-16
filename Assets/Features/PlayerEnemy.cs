@@ -20,7 +20,6 @@ public class PlayerEnemy : MonoBehaviour
     [SerializeField] private const float baseDamage = 10;
 
     [SerializeField] private TextMeshProUGUI comboDisplay;
-    [SerializeField] private TextMeshProUGUI hitDisplay;
 
     [SerializeField] private Slider playerHealthBar;
     [SerializeField] private Slider enemyHealthBar;
@@ -55,8 +54,7 @@ public class PlayerEnemy : MonoBehaviour
                 break;
         }
         comboDisplay.text = combo.ToString();
-        hitDisplay.text = hit.ToString();
-
+        GameManager.Instance.VFXManager.DisplayHit(hit);
     }
 
     void DamagePlayer()

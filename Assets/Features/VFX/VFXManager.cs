@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class VFXManager : MonoBehaviour
@@ -8,6 +9,9 @@ public class VFXManager : MonoBehaviour
     [SerializeField] private GameObject deflectedPrefab;
 
     [SerializeField] private Transform monsterPosition;
+
+    [SerializeField] private TextMeshProUGUI hitDisplay;
+
     [SerializeField] private float threshold;
     [SerializeField] private float speed;
 
@@ -30,13 +34,15 @@ public class VFXManager : MonoBehaviour
 
     public void DisplayHit(NoteHit hit)
     {
-        string dsiplay = hit switch
+        string display = hit switch
         {
             NoteHit.Miss => "Miss",
             NoteHit.Perfect => "Counter",
             NoteHit.Good => "Deflect",
             _ => throw new System.ArgumentOutOfRangeException()
         };
+
+        hitDisplay.text = display;
     }
 
     public void Deflect(Vector2 startPosition)
