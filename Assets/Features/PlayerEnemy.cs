@@ -80,13 +80,13 @@ public class PlayerEnemy : MonoBehaviour
     void Win()
     {
         StopMusic();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     void Lose()
     {
         StopMusic();
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     void StopMusic()

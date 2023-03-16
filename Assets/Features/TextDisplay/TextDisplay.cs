@@ -27,12 +27,14 @@ public class TextDisplay : MonoBehaviour
     {
         for (int index = 0; index < texts.Length; index++)
         {
+            Debug.Log("new Text: " + index + ", text max: " + texts.Length);
             for (int i = 0; i < texts[index].Length; i++)
             {
                 textfield.text = string.Concat(textfield.text, texts[index][i]);
                 //Wait a certain amount of time, then continue with the for loop
                 yield return new WaitForSeconds(timer);
             }
+            Debug.Log("Text done: " + index);
             yield return new WaitUntil(() => Input.GetMouseButton(0));
             yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
         }      

@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void Quit()
@@ -17,11 +17,11 @@ public class MenuManager : MonoBehaviour
 
     public void ToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void ToSettings()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 }
