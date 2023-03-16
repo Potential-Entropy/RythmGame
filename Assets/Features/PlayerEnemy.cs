@@ -41,17 +41,17 @@ public class PlayerEnemy : MonoBehaviour
         Debug.Log(hit.ToString());
         switch (hit)
         {
-            case NoteHit.Perfect: 
-                combo++; 
-                DamageEnemy(xPosition); 
+            case NoteHit.Perfect:
+                combo++;
+                DamageEnemy(xPosition);
                 break;
             case NoteHit.Good:
                 GameManager.Instance.VFXManager.Deflect(new Vector2(xPosition, 0));
-                combo++; 
-                break; 
-            case NoteHit.Miss: 
+                combo++;
+                break;
+            case NoteHit.Miss:
                 combo = 0;
-                DamagePlayer(); 
+                DamagePlayer();
                 break;
         }
         comboDisplay.text = combo.ToString();
@@ -73,8 +73,8 @@ public class PlayerEnemy : MonoBehaviour
         enemyHP -= baseDamage * (1 + combo * 0.01f);
         enemyHealthBar.value = enemyHP;
         GameManager.Instance.VFXManager.Reflect(new Vector2(xPosition, 0));
-        if(2 * enemyHP <= enemyMaxHP) { }
-        GameManager.Instance.noteSpawner.SetPlaybackSpeed(Mathf.Lerp(1.0f, 1.2f, 1.0f - 2 * enemyHP / enemyMaxHP));
+        if (2 * enemyHP <= enemyMaxHP)
+            GameManager.Instance.noteSpawner.SetPlaybackSpeed(Mathf.Lerp(1.0f, 1.2f, 1.0f - 2 * enemyHP / enemyMaxHP));
         if (enemyHP <= 0)
             Win();
     }

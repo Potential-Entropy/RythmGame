@@ -63,7 +63,7 @@ public class NoteSpawner : MonoBehaviour
         timePassed += Time.deltaTime * speed;
 
         var currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3.zero;
-        if (noteIndex < noteInfos.Length && (currentNote.x / bps - NoteDelay) <= timePassed)
+        if (noteIndex < noteInfos.Length && (currentNote.x / bps - NoteDelay) < timePassed)
         {
             SpawnNote((int)currentNote.y, (int)currentNote.z);
             ++noteIndex;
