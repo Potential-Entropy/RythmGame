@@ -8,6 +8,11 @@ public class NoteTiming : MonoBehaviour
 {
     [SerializeField] private Settings settingsData;
 
+    void Awake()
+    {
+        GetComponent<Slider>().value = settingsData.timingOffset;
+    }
+
     public void SetTimingOffset()
     {
         settingsData.timingOffset = GetComponent<Slider>().value;
