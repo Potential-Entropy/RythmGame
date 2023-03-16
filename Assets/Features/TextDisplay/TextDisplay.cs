@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TextDisplay : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class TextDisplay : MonoBehaviour
     {
         for (int index = 0; index < texts.Length; index++)
         {
+            textfield.text = "";
             Debug.Log("new Text: " + index + ", text max: " + texts.Length);
             for (int i = 0; i < texts[index].Length; i++)
             {
@@ -37,7 +39,8 @@ public class TextDisplay : MonoBehaviour
             Debug.Log("Text done: " + index);
             yield return new WaitUntil(() => Input.GetMouseButton(0));
             yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
-        }      
+        }
+        SceneManager.LoadScene("SampleScene");
     }
 
 }

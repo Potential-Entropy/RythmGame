@@ -520,7 +520,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239932310
 MonoBehaviour:
@@ -569,8 +569,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -941,11 +941,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textfield: {fileID: 1239932310}
-  timer: 0.05
+  timer: 0.03
   texts:
-  - 
-  - Test
-  - Test2
+  - The wind howls through the mountain pass as I trudge through the knee-deep snow.
+    I've been searching for this artifact for months, and I'm so close I can taste
+    it. But the closer I get, the more uneasy I feel.
+  - There have been whispers of a creature in the mountains, something fierce and
+    unrelenting. I've heard tales of travelers who ventured too far and never returned.
+    But I didn't come all this way just to turn back now.
+  - Suddenly, I hear a sound in the distance. It's faint at first, but it grows louder
+    and more distinct with every passing moment. It's a beautiful melody that echoes
+    through the snow-covered hills.
+  - As I draw closer, the source of the music becomes clear. There before me, is
+    a yeti.
+  - The yeti looks at me with its piercing blue eyes, and for a moment, we stare
+    at each other in silence. Then, with a sudden burst of movement, the yeti charges
+    at me...
 --- !u!114 &2115754060
 MonoBehaviour:
   m_ObjectHideFlags: 0
