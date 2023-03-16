@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207356528781, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207414435141, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: speed
@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207414435142, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207550925188, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: speed
@@ -200,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207550925193, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207553331047, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_Pivot.x
@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207804479532, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207942051151, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: speed
@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919207942051152, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208068437700, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: speed
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208068437705, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208324610688, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: speed
@@ -408,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208324610693, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.859497
+      value: 4.859619
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208722560342, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: speed
@@ -432,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208722560347, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208810481626, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: speed
@@ -456,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208810481631, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208911887231, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -480,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075919208911887231, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.14050293
+      value: -0.14038086
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41bfa746e8c66e74a9286701e9b3d3f1, type: 3}
@@ -954,7 +954,7 @@ MonoBehaviour:
     through the snow-covered hills.
   - As I draw closer, the source of the music becomes clear. There before me, is
     a yeti.
-  - The yeti looks at me with its piercing blue eyes, and for a moment, we stare
+  - The yeti looks at me with its piercing green eyes, and for a moment, we stare
     at each other in silence. Then, with a sudden burst of movement, the yeti charges
     at me...
 --- !u!114 &2115754060
