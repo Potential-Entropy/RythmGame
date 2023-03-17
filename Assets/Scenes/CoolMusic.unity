@@ -2728,13 +2728,13 @@ MonoBehaviour:
   - {fileID: 222295725}
   noteSounds:
   - Guid:
-      Data1: 710047835
-      Data2: 1228858609
-      Data3: -913597022
-      Data4: -328401723
-    Path: event:/Music
+      Data1: 1994537266
+      Data2: 1289907656
+      Data3: -1901863267
+      Data4: 118839973
+    Path: event:/Music 2
   offset: 0
-  songObject: {fileID: 11400000, guid: dec41740f33fadc47bb1afadf86e0b2e, type: 2}
+  songObject: {fileID: 11400000, guid: 1096a51c4802c6e459644d3dabe47aff, type: 2}
 --- !u!1 &1846526760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,7 +2907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 200, y: -51}
+  m_AnchoredPosition: {x: 200, y: -74}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1866827888

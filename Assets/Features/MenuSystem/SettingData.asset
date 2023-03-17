@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SettingData
   m_EditorClassIdentifier: 
   timingOffset: -0.2
-  terribleMode: 0
+  terribleMode: 1
