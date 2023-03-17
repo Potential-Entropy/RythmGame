@@ -40,7 +40,7 @@ public class TextDisplay : MonoBehaviour
             yield return new WaitUntil(() => Input.GetMouseButton(0));
             yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
         }
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(2);
     }
 
 }
