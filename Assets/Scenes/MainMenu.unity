@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yeti Music Game
+  m_text: Frozen Frenzy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a16ec7ffe55ea047b8dc295eab905e0, type: 2}
   m_sharedMaterial: {fileID: -7975369096343378360, guid: 2a16ec7ffe55ea047b8dc295eab905e0, type: 2}

@@ -12,7 +12,7 @@ public enum NoteHit
 
 public class PlayerEnemy : MonoBehaviour
 {
-    public const float playerMaxHP = 700;
+    public const float playerMaxHP = 300;
     public const float enemyMaxHP = 4000;
     private float playerHP;
     private float enemyHP;
@@ -61,9 +61,9 @@ public class PlayerEnemy : MonoBehaviour
     {
         playerHP -= baseDamage;
         playerHealthBar.value = playerHP;
-        //GameManager.Instance.noteSpawner.SetDisharmony(1.0f - playerHP / playerMaxHP);
-       // if (playerHP <= 0)
-          //  Lose();
+        GameManager.Instance.noteSpawner.SetDisharmony(1.0f - playerHP / playerMaxHP);
+        if (playerHP <= 0)
+            Lose();
     }
 
     void DamageEnemy(float xPosition)
@@ -71,8 +71,8 @@ public class PlayerEnemy : MonoBehaviour
         enemyHP -= baseDamage * (1 + combo * 0.01f);
         enemyHealthBar.value = enemyHP;
         GameManager.Instance.VFXManager.Reflect(new Vector2(xPosition, 0));
-        //if (2 * enemyHP <= enemyMaxHP)
-            //GameManager.Instance.noteSpawner.SetPlaybackSpeed(Mathf.Lerp(1.0f, 1.2f, 1.0f - 2 * enemyHP / enemyMaxHP));
+        if (2 * enemyHP <= enemyMaxHP)
+            GameManager.Instance.noteSpawner.SetPlaybackSpeed(Mathf.Lerp(1.0f, 1.2f, 1.0f - 2 * enemyHP / enemyMaxHP));
         if (enemyHP <= 0)
             Win();
     }
