@@ -67,6 +67,7 @@ public class NoteSpawner : MonoBehaviour
         var currentNote = noteIndex < noteInfos.Length ? noteInfos[noteIndex] : Vector3.zero;
         if (noteIndex < noteInfos.Length && (currentNote.x / bps - NoteDelay + offset) < timePassed)
         {
+            Debug.Log(currentNote.x);
             SpawnNote((int)currentNote.y, (int)currentNote.z);
             ++noteIndex;
         }

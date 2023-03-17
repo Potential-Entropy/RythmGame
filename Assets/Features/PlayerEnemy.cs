@@ -62,8 +62,8 @@ public class PlayerEnemy : MonoBehaviour
         playerHP -= baseDamage;
         playerHealthBar.value = playerHP;
         //GameManager.Instance.noteSpawner.SetDisharmony(1.0f - playerHP / playerMaxHP);
-        if (playerHP <= 0)
-            Lose();
+       // if (playerHP <= 0)
+          //  Lose();
     }
 
     void DamageEnemy(float xPosition)

@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3fbf846127864a646956ce7e99bef916
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/CoolMusic.unity
+    guid: 6587ecd71b3bcc74686265b1365ebd62
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: b08525cb8cc129b41b1e66a11d6ff5e3
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: af26ceea6c68d934aaf94c69e26b0b79
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
